@@ -1,0 +1,27 @@
+<h1>Agregar Producto</h1>
+<hr />
+<form [formGroup]="myForm">
+  <div style="display: flex">
+    <div class="">
+      <label for="">Nombre:</label>
+    </div>
+    <div class="">
+      <input formControlName="name" type="text" name="" id="" class="" />
+    </div>
+
+    <div class="">
+      <span customLabel [color]="color" [errors]="myForm.get('name')?.errors"
+        >Temporal</span
+      >
+    </div>
+  </div>
+  <button (click)="changeColor()">cambiar color</button>
+</form>
+
+<h1>
+  <pre>
+        {{ myForm.get("name")?.errors | json }}
+    </pre
+  >
+  <p>Color: {{ color }}</p>
+</h1>
